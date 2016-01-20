@@ -12,8 +12,7 @@ def findwall():
     soup=BeautifulSoup(source)
     for wall in soup.find('div',{'class':'primary_photo'}).findAll('img'):
         src=wall.get('src')
-        scr= src[2:]
-        urllib.urlretrieve('https://'+scr,'wallpaper.jpg')
+        urllib.urlretrieve('https:'+src,'wallpaper.jpg')
 
 def setwall():
     findwall()
